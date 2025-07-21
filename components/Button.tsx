@@ -2,7 +2,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 type Props = {
-  label: string
+  label?: string
   theme?: string
   onPress?: () => void
 }
@@ -13,7 +13,7 @@ export default function Button({ label, theme, onPress }: Props) {
       <View
         style={[
           styles.buttonContainer,
-          { borderWidth: 4, borderColor: '#F1EBFA', borderRadius: 18 },
+          { borderWidth: 4, borderColor: '#F2CC8F', borderRadius: 18 },
         ]}
       >
         <Pressable
@@ -27,6 +27,34 @@ export default function Button({ label, theme, onPress }: Props) {
             style={styles.buttonIcon}
           />
           <Text style={styles.buttonLabel}>{label}</Text>
+        </Pressable>
+      </View>
+    )
+  }
+
+  if (theme === 'camera') {
+    return (
+      <View
+        style={[
+          styles.buttonContainer,
+          {
+            width: 64,
+            height: 64,
+            borderRadius: '50%',
+            borderWidth: 4,
+            borderColor: '#F2CC8F',
+            marginBottom: 8,
+          },
+        ]}
+      >
+        <Pressable
+          style={[
+            styles.button,
+            { backgroundColor: '#fff', borderRadius: '50%' },
+          ]}
+          onPress={onPress}
+        >
+          <FontAwesome name="camera" size={18} color="#0D0628" />
         </Pressable>
       </View>
     )
@@ -59,7 +87,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   buttonLabel: {
-    color: '#0D0628',
+    color: '#3D405B',
     fontSize: 16,
   },
   buttonIcon: {

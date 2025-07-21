@@ -11,11 +11,11 @@ export default function About() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FCF7FA',
+    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
-    color: '#0D0628',
+    color: '#3D405B',
   },
 })
